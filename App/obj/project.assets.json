@@ -12077,11 +12077,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Pickles\\Test\\Test.csproj",
+      "projectUniqueName": "D:\\Projects\\Pickles\\Git\\AzureTest\\App\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "D:\\Projects\\Pickles\\Test\\Test.csproj",
+      "projectPath": "D:\\Projects\\Pickles\\Git\\AzureTest\\App\\Test.csproj",
       "packagesPath": "C:\\Users\\Hajas.Hashim\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Pickles\\Test\\obj\\",
+      "outputPath": "D:\\Projects\\Pickles\\Git\\AzureTest\\App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
