@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubedemo
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: kubedemo
+    spec:
+      containers:
+        - image: "hajas1989/kubedemo:myapp"
+          imagePullPolicy: Always
+          name: kubedemo
+          ports:
+            - containerPort: 80

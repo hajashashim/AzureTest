@@ -1,0 +1,20 @@
+•  Create a MVC application - Done
+•  Build an image, test local image with docker, push the image on registry - Done
+	* docker build -t testapp .
+	* docker run -d -p 8080:80 --name myapp testapp
+	* docker login --username=hajas1989 --password=<MyPassword>
+	* docker tag testapp:latest hajas1989/kubedemo:myapp
+	* docker push hajas1989/kubedemo:myapp
+•  Create a K8s cluster - Done
+	* Created using Azure Kubernetes Service
+	* az aks get-credentials --resource-group rg-kube-demo --name demo-cluster
+	* kubectl get nodes
+•  Create deployments, services and other necessary components and deploy it on cluster
+	* docker login
+	* cat ~/.docker/config.json
+	* kubectl create secret generic regcred     --from-file=.dockerconfigjson=.docker/config.json     --type=kubernetes.io/dockerconfigjson
+	* kubectl get secret regcred --output=yaml
+	* created deployment and service as sample-app.yaml
+	* kubectl apply -f sample-app.yaml
+	* kubectl get service kubedemo --watch
+•  Create a helm chart for the deployment and use that to deploy the application.

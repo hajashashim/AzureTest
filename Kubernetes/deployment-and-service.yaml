@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubedemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubedemo
+  template:
+    metadata:
+      labels:
+        app: kubedemo
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: kubedemo
+        image: hajas1989/kubedemo:myapp
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubedemo
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: kubedemo
